@@ -1,0 +1,36 @@
+<div style="margin-left: 20px; margin-top: 20px;">
+	<form {{action 'submit' on='submit'}}>
+		<div class="form-group">
+			<label for="page title">Page title</label>
+			{{input class="form-control" placeholder="Enter page name" value=page.title }}
+			
+		</div>
+
+		<div class="form-group">
+			<label for="page title">Content</label>
+			{{textarea class="form-control" value=page.content rows="10" placeholder="Enter content"}}
+			
+		</div>
+
+		<div class="form-group">
+			<label for="page title">Author</label>
+			{{input class="form-control" value=page.author placeholder="Enter your name"}}
+			
+		</div>
+
+		<div class="form-group">
+			<label for="page title">Active</label>
+			<select class="form-control">
+				<option value="true">Yes</option>
+				<option value="false">No</option>
+			</select>
+		</div>
+
+		<div class="form-group">
+			<button class="btn btn-primary" type="submit">Add new page</button>
+		</div>
+
+	</form>
+</div>
+
+{{yield}}

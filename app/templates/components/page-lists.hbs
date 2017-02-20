@@ -1,0 +1,37 @@
+<div>
+    {{#link-to 'admin.addpage' class="btn btn-success"}}Add new page{{/link-to}}
+</div>
+<div>&nbsp;</div>
+<div>
+    <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Page name</th>
+            <th>Content</th>
+            <th>Author</th>
+            <th>Created date</th>
+            <th>Active</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+        	{{#each page as |pages|}}
+        		<tr>
+    	    		<td>{{pages.title}}</td>
+    		        <td>{{pages.content}}</td>
+    		        <td>{{pages.author}}</td>
+                    <td>{{pages.createdon}}</td>
+    		        <td>{{pages.active}}</td>
+    		        <td>{{#link-to 'admin.editpage'}}<i class="glyphicon glyphicon-pencil"></i>{{/link-to}}</td>
+    		        <td><a href="" {{action 'deletePage'}}><i class="glyphicon glyphicon-remove"></i></a></td>
+    	        </tr>
+        	{{/each}}
+     
+        </tbody>
+      </table>
+</div>
+
+
+{{yield}}
+
